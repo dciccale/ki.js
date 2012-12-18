@@ -102,4 +102,4 @@ It was done for fun, and the funniest part is that it actually works :)
 The code is a bit commented so you can learn from it.
 
 ## License
-See LICENSE.txt
+See [LICENSE.txt](https://raw.github.com/dciccale/ki.js/master/LICENSE.txt)
