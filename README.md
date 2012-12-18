@@ -21,7 +21,7 @@ Use any CSS selector that exists to get elements from the DOM.
 
 
 ### Events
-Yes, events with the known .on() and .off() methods
+Yes, events with the known `.on()` and `.off()` methods
 
 ```html
 <button>ki.js</button>
