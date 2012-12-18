@@ -59,7 +59,7 @@ $(function () {
 All methods of ki.js are chainable, just like jQuery.
 
 ## Plugins?
-Yeah, you could write plugins for ki.js if you want, fork the project for making them, keep them super super xxs and I promes to merge them into the official repo.
+Yeah, you could write plugins for ki.js if you want, fork the project for making them, keep them super super xxs and I promise to merge them into the official repo.
 
 ### How to make plugins?
 Just add your methods to the prototype of ki.js and you're done.
