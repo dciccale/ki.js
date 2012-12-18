@@ -4,7 +4,7 @@ ki.js is a super-tiny jQuery-like JavaScript Library (554 bytes | 348 gzipped)
 
 ## What can i do with ki.js?
 
-With ki.js you cand do the basic stuff jQuery can, for example:
+With ki.js you can do the basic stuff jQuery can, for example:
 
 ### DOM Ready?
 
