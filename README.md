@@ -19,6 +19,15 @@ $(function () {
 ### CSS Selectors
 Use any CSS selector that exists to get elements from the DOM.
 
+```javascript
+$('p:nth-last-of-type(2)');
+$('[attribute|=value]');
+$('p:not(.note)');
+$('p:empty');
+```
+
+[See a list of all CSS selectors](http://vogtjosh.com/selectors/)
+
 
 ### Events
 Yes, events with the known `.on()` and `.off()` methods
