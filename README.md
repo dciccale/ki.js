@@ -49,7 +49,7 @@ $(function () {
 ```
 You can add any JavaScript event even touch events for mobile, under the hood ki.js uses addEventListener, so feel free to use any valid ECMAScript 5 event.
 
-### each()
+### .each()
 The `each()` is also included in the core of ki.js for easy iterating a DOM collection.
 
 ```javascript
