@@ -1,9 +1,10 @@
 /*
- * ki.js - jQuery-like super-tiny JavaScript library
+ * ki.js - jQuery-like API super-tiny JavaScript library
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, f, h, e) {
+!function (b, c, d, f, h) {
+
   /*
    * $ main method
    * a = css selector, dom object, or function
@@ -14,14 +15,13 @@
   };
 
   // ki prototype
-  e = {
+  h = {
     // default length
     length: 0,
 
     /*
      * init method (internal use)
      * a = selector, dom element or function
-     * (t = internal use)
      */
     i: function (a) {
       c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
@@ -35,19 +35,19 @@
      * return this
      */
     r: function (a) {
-      /c/.test(b.readyState) ? a() : $(b).on("DOMContentLoaded", a);
+      /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a)
       return this
     },
 
     /*
      * on method
      * a = string event type i.e 'click'
-     * g = function
+     * b = function
      * return this
      */
-    on: function (a, g) {
-      return this.each(function (b) {
-        b["add" + f](a, g)
+    on: function (a, b) {
+      return this.each(function (c) {
+        c["add" + f](a, b)
       })
     },
 
@@ -71,7 +71,7 @@
      * return this
      */
     each: function (a, b) {
-      c.forEach.call(b = this, a);
+      c.forEach.call(b = this, a)
       return b
     },
 
@@ -81,5 +81,5 @@
   };
 
   // set prototypes
-  $[d] = e.i[d] = e
-}(document, [], "prototype", "EventListener");
+  $[d] = h.i[d] = h
+}(document, [], 'prototype', 'EventListener');
