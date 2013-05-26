@@ -8,7 +8,7 @@ ki.js is a super-tiny jQuery-like JavaScript Library (552 bytes | 347 gzipped)
 
 [ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by the previous browsers including IE8. (811 bytes | 468 gzipped)
 
-## What can i do with ki.js?
+## What can I do with ki.js?
 
 With ki.js you can do the basic stuff jQuery can, for example:
 
