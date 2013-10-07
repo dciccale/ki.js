@@ -111,10 +111,8 @@ Remember to write byte-saving code, see this [useful resource for JavaScript byt
 In every cool and modern browser.
 
 ## The Code
-The code of ki.js was written for byte-saving, so I don't recommend you using this type of programming for a real application or website.
+The code of ki.js was written for byte-saving, so I don't recommend using this script for a real application or website.
 It was done for fun, and the funniest part is that it actually works :)
-
-The code is a bit commented so you can learn from it.
 
 ## License
 See [LICENSE.txt](https://raw.github.com/dciccale/ki.js/master/LICENSE.txt)
