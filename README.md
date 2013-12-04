@@ -118,6 +118,8 @@ It was done for fun, and the funniest part is that it actually works :)
 
 To build, you need [Grunt](http://gruntjs.com/). If you haven't used grunt before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started).
 
+Here are some of the tasks that grunt can run:
+
 * uglify:update -- add new banners
 * uglify:ie -- compile ki.ie8.min.js to ki.ie8.min.js
 * uglify:normal -- compile ki.min.js to ki.min.js
