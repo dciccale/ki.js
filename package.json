@@ -1,0 +1,20 @@
+{
+  "name": "ki.js",
+  "description": "jQuery-like API super-tiny JavaScript library",
+  "version": "1.0.0",
+  "homepage": "https://github.com/james2doyle/ki.js",
+  "author": {
+    "name": "James Doyle",
+    "email": "james2doyle@gmail.com",
+    "url": "http://ohdoylerules.com/"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  }],
+  "dependencies" : {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "*"
+  }
+}
