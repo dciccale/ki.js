@@ -3,13 +3,21 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     meta: {
-      banner: '/*! <%= pkg.name %> - <%= pkg.description %> \\n' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>);\\n' +
-      '* Released under <%= _.pluck(pkg.licenses, "type").join(", ") %> license */'
+      banner: '/*!\n * <%= pkg.name %> - <%= pkg.description %>\n' +
+      ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>)\n' +
+      ' * Released under <%= _.pluck(pkg.licenses, "type").join(", ") %> license\n */\n'
     },
     uglify: {
-      options: {
-        banner: '<%= meta.banner %>'
+      update: {
+        options: {
+          banner: '<%= meta.banner %>',
+          beautify: true,
+          preserveComments: 'all'
+        },
+        files: {
+          'ki.js': ['ki.js'],
+          'ki.ie8.js': ['ki.ie8.js']
+        }
       },
       ie: {
         files: {
