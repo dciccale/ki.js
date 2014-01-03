@@ -104,14 +104,15 @@
      * each method
      * use native forEach to iterate collection
      * a = the function to call each loop
-     * (b = internal use)
+     * b = the this value for that function
+     * (c,d,e = internal use)
      * return this
      */
-    each: function (a, b, c, d) {
-      for (b=this,c=0,d=b.length;c<d;++c) {
-        a.call(b[c],b[c],c,b)
+    each: function (a, b, c, d, e) {
+      for (c=this,d=0,e=c.length;d<e;++d) {
+        a.call(b,c[d],d,c)
       }
-      return b
+      return c
     },
 
     // for some reason is needed to get an array-like
