@@ -4,23 +4,7 @@
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, f, h, i) {
-
-  /*
-   * (internal use)
-   * ie8 workaround to convert NodeList to an array
-   * a = NodeList
-   * b = placeholder for each node
-   * c = index
-   * d = empty array
-   * returns array of dom nodes
-   */
-  h = function (a, b, c, d) {
-    c = -1
-    d = []
-    while (b = a[++c]) d[c] = b
-    return d
-  }
+!function (b, c, d, f, i) {
 
   /*
    * (internal use)
@@ -61,7 +45,7 @@
      * a = selector, dom element or function
      */
     i: function (a) {
-      c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? h(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
+      c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
     },
 
     /*
