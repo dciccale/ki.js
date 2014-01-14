@@ -37,7 +37,7 @@
       element[method](type, callback, false)
     } catch (e) {
       method = {on: 'attachEvent', off: 'detachEvent'}[action]
-      element[method](action + type, function () { callback.apply(element, arguments) })
+      element[method]('on' + type, function () { callback.apply(element, arguments) })
     }
   }
 
@@ -84,7 +84,7 @@
      */
     on: function (a, b) {
       return this.each(function (c) {
-        i('on', a, this, b)
+        i('on', a, c, b)
       })
     },
 
@@ -96,7 +96,7 @@
      */
     off: function (a, b) {
       return this.each(function (c) {
-        i('off', a, this, b)
+        i('off', a, c, b)
       })
     },
 
