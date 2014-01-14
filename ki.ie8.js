@@ -102,14 +102,12 @@
 
     /*
      * each method
-     * use native forEach to iterate collection
      * a = the function to call each loop
      * b = the this value for that function
-     * (c,d,e = internal use)
      * return this
      */
-    each: function (a, b, c, d, e) {
-      for (c=this,d=0,e=c.length;d<e;++d) {
+    each: function (a, b) {
+      for (var c=this,d=0,e=c.length;d<e;++d) {
         a.call(b,c[d],d,c)
       }
       return c

@@ -71,9 +71,9 @@
      * (d = internal use)
      * return this
      */
-    each: function (a, b, d) {
-      c.forEach.call(d = this, a, b)
-      return d
+    each: function (a, b) {
+      c.forEach.call(this, a, b)
+      return this
     },
 
     // for some reason is needed to get an array-like
