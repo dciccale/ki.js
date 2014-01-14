@@ -32,11 +32,11 @@
    * method = placeholder for the native method to call (internal use)
    */
   i = function (action, type, element, callback, method) {
-    method = {on: 'addEventListener', off: 'removeEventListener'}[action]
+    method = ['addEventListener','removeEventListener'][action]
     try {
       element[method](type, callback, false)
     } catch (e) {
-      method = {on: 'attachEvent', off: 'detachEvent'}[action]
+      method = ['attachEvent', 'detachEvent'][action]
       element[method]('on' + type, function () { callback.apply(element, arguments) })
     }
   }
@@ -84,7 +84,7 @@
      */
     on: function (a, b) {
       return this.each(function (c) {
-        i('on', a, c, b)
+        i(0, a, c, b)
       })
     },
 
@@ -96,7 +96,7 @@
      */
     off: function (a, b) {
       return this.each(function (c) {
-        i('off', a, c, b)
+        i(1, a, c, b)
       })
     },
 
