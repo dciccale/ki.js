@@ -4,34 +4,17 @@
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, f, i) {
+!function (a, b, c, d, e, f, g) {
 
-  /*
-   * (internal use)
-   * Cross-browser super-type event handler https://gist.github.com/dciccale/5521816
-   * action = 'on' or 'off'
-   * type = event type (i.e. 'click')
-   * element = the element to add the event
-   * callback = function to execute when event is triggered
-   * method = placeholder for the native method to call (internal use)
-   */
-  i = function (action, type, element, callback, method) {
-    method = ['addEventListener','removeEventListener'][action]
-    try {
-      element[method](type, callback, false)
-    } catch (e) {
-      method = ['attachEvent', 'detachEvent'][action]
-      element[method]('on' + type, function () { callback.apply(element, arguments) })
-    }
-  }
-
+  // addEventListener support?
+  g = 'add' + e in a
 
   /*
    * $ main method
    * a = css selector, dom object, or function
    * returns instance
    */
-  this.$ = function (a) {
+  a.$ = function (a) {
     return new $[d].i(a)
   }
 
@@ -68,7 +51,7 @@
      */
     on: function (a, b) {
       return this.each(function (c) {
-        i(0, a, c, b)
+        g ? c['add' + e](a, b, false) : this.attachEvent('on' + a, b)
       })
     },
 
@@ -80,7 +63,7 @@
      */
     off: function (a, b) {
       return this.each(function (c) {
-        i(1, a, c, b)
+        g ? c['remove' + e](a, b) : this.detachEvent('on' + a, b)
       })
     },
 
@@ -104,4 +87,4 @@
 
   // set prototypes
   $[d] = f.i[d] = f
-}(document, [], 'prototype');
+}(this, document, [], 'prototype', 'EventListener');
