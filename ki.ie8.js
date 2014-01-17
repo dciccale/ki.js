@@ -4,32 +4,32 @@
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (a, b, c, d, e, f, g) {
+!function (b, c, d, e, f) {
 
   // addEventListener support?
-  g = 'add' + e in a
+  f = b['add' + e]
 
   /*
-   * $ main method
+   * init function (internal use)
+   * a = selector, dom element or function
+   */
+  function i(a) {
+    c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
+  }
+
+  /*
+   * $ main function
    * a = css selector, dom object, or function
    * returns instance
    */
-  a.$ = function (a) {
-    return new $[d].i(a)
+  $ = function (a) {
+    return new i(a)
   }
 
-  // ki prototype
-  f = {
+  // set ki prototype
+  $[d] = i[d] = {
     // default length
     length: 0,
-
-    /*
-     * init method (internal use)
-     * a = selector, dom element or function
-     */
-    i: function (a) {
-      c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
-    },
 
     /*
      * ready method
@@ -39,7 +39,7 @@
      * return this
      */
     r: function (a) {
-      /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a)
+      /c/.test(b.readyState) ? a() : this.on('DOMContentLoaded', a)
       return this
     },
 
@@ -51,7 +51,7 @@
      */
     on: function (a, b) {
       return this.each(function (c) {
-        g ? c['add' + e](a, b, false) : this.attachEvent('on' + a, b)
+        f ? c['add' + e](a, b, false) : this.attachEvent('on' + a, b)
       })
     },
 
@@ -63,7 +63,7 @@
      */
     off: function (a, b) {
       return this.each(function (c) {
-        g ? c['remove' + e](a, b) : this.detachEvent('on' + a, b)
+        f ? c['remove' + e](a, b) : this.detachEvent('on' + a, b)
       })
     },
 
@@ -84,7 +84,4 @@
     // representation instead of an object
     splice: c.splice
   }
-
-  // set prototypes
-  $[d] = f.i[d] = f
-}(this, document, [], 'prototype', 'EventListener');
+}(document, [], 'prototype', 'EventListener');
