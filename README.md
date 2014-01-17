@@ -1,12 +1,12 @@
 # ki.js
 
-ki.js is a super-tiny jQuery-like JavaScript Library (552 bytes | 347 gzipped)
+ki.js is a super-tiny jQuery-like JavaScript Library (534 bytes | 330 gzipped)
 
 ### Browser support
 
 [ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) **(recommended)** version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
 
-[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by the previous browsers including IE8. (811 bytes | 468 gzipped)
+[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by the previous browsers including IE8. (646 bytes | 384 gzipped)
 
 ## What can I do with ki.js?
 
@@ -83,9 +83,9 @@ For example, let's add a `text()` method for setting or getting the text of the 
 ```javascript
 // minified is 106 bytes
 $.prototype.text = function (a) {
-  return a === []._ ? this[0].textContent : this.each(function (b) {
+  return a === a + '' ? this.each(function (b) {
     b.textContent = a
-  })
+  }) : this[0].textContent
 };
 ```
 
