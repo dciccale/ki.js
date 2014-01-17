@@ -3,29 +3,29 @@
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, f, h) {
+!function (b, c, d) {
+
+  /*
+   * init function (internal use)
+   * a = selector, dom element or function
+   */
+  function i(a) {
+    c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
+  }
 
   /*
    * $ main method
    * a = css selector, dom object, or function
    * returns instance
    */
-  this.$ = function (a) {
-    return new $[d].i(a)
-  };
+  $ = function (a) {
+    return new i(a)
+  }
 
-  // ki prototype
-  h = {
+  // set ki prototype
+  $[d] = i[d] = {
     // default length
     length: 0,
-
-    /*
-     * init method (internal use)
-     * a = selector, dom element or function
-     */
-    i: function (a) {
-      c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
-    },
 
     /*
      * ready method
@@ -47,7 +47,7 @@
      */
     on: function (a, b) {
       return this.each(function (c) {
-        c["add" + f](a, b)
+        c.addEventListener(a, b)
       })
     },
 
@@ -59,7 +59,7 @@
      */
     off: function (a, b) {
       return this.each(function (c) {
-        c["remove" + f](a, b)
+        c.removeEventListener(a, b)
       })
     },
 
@@ -80,7 +80,4 @@
     // representation instead of an object
     splice: c.splice
   };
-
-  // set prototypes
-  $[d] = h.i[d] = h
-}(document, [], 'prototype', 'EventListener');
+}(document, [], 'prototype');
