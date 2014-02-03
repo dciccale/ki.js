@@ -120,9 +120,8 @@ To build, you need [Grunt](http://gruntjs.com/). If you haven't used grunt befor
 
 Here are some of the tasks that grunt can run:
 
-* uglify:update -- add new banners
-* uglify:ie -- compile ki.ie8.min.js to ki.ie8.min.js
-* uglify:normal -- compile ki.min.js to ki.min.js
+* grunt normal -- compile ki.js to ki.min.js
+* grunt ie -- compile ki.ie8.js to ki.ie8.min.js
 
 Running `grunt` (default task) is just mapped to the `uglify:normal` task.
 
