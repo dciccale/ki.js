@@ -1,72 +1,86 @@
-/*!
+/*
  * ki.js - jQuery-like API super-tiny JavaScript library
- * Copyright (c) 2013 Denis Ciccale (@tdecs)
+ * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function(a, b, c, d, e) {
-    /*
+!function (b, c, d, f, h) {
+
+  /*
    * $ main method
    * a = css selector, dom object, or function
    * returns instance
    */
-    this.$ = function(a) {
-        return new $[c].i(a);
-    }, // ki prototype
-    e = {
-        // default length
-        length: 0,
-        /*
+  this.$ = function (a) {
+    return new $[d].i(a)
+  };
+
+  // ki prototype
+  h = {
+    // default length
+    length: 0,
+
+    /*
      * init method (internal use)
      * a = selector, dom element or function
      */
-        i: function(c) {
-            b.push.apply(this, c && c.nodeType ? [ c ] : "" + c === c ? b.slice.call(a.querySelectorAll(c)) : /^f/.test(typeof c) ? $(a).r(c) : null);
-        },
-        /*
+    i: function (a) {
+      c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
+    },
+
+    /*
      * ready method
      * Smallest DOMReady code, ever
      * http://www.dustindiaz.com/smallest-domready-ever
      * a = function to call when dom is ready
      * return this
      */
-        r: function(b) {
-            return /c/.test(a.readyState) ? b() : $(a).on("DOMContentLoaded", b), this;
-        },
-        /*
+    r: function (a) {
+      /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a)
+      return this
+    },
+
+    /*
      * on method
      * a = string event type i.e 'click'
      * b = function
      * return this
      */
-        on: function(a, b) {
-            return this.each(function(c) {
-                c["add" + d](a, b);
-            });
-        },
-        /*
+    on: function (a, b) {
+      return this.each(function (c) {
+        c["add" + f](a, b)
+      })
+    },
+
+    /*
      * off method
      * a = string event type i.e 'click'
      * b = function
      * return this
      */
-        off: function(a, b) {
-            return this.each(function(c) {
-                c["remove" + d](a, b);
-            });
-        },
-        /*
+    off: function (a, b) {
+      return this.each(function (c) {
+        c["remove" + f](a, b)
+      })
+    },
+
+    /*
      * each method
      * use native forEach to iterate collection
      * a = the function to call each loop
-     * (b = internal use)
+     * b = the this value for that function
+     * (d = internal use)
      * return this
      */
-        each: function(a, c) {
-            return b.forEach.call(c = this, a), c;
-        },
-        // for some reason is needed to get an array-like
-        // representation instead of an object
-        splice: b.splice
-    }, // set prototypes
-    $[c] = e.i[c] = e;
-}(document, [], "prototype", "EventListener");
+    each: function (a, b, d) {
+      c.forEach.call(d = this, a, b)
+      return d
+    },
+
+    // for some reason is needed to get an array-like
+    // representation instead of an object
+    splice: c.splice
+  };
+
+  // set prototypes
+  $[d] = h.i[d] = h
+}(document, [], 'prototype', 'EventListener');
