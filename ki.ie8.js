@@ -110,7 +110,7 @@
     each: function(a, b, c, d) {
       for (b = this, c = 0, d = b.length; d > c; ++c) a.call(b[c], b[c], c, b);
       return b;
-    }
+    },
 
     // for some reason is needed to get an array-like
     // representation instead of an object

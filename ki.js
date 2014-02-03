@@ -74,7 +74,7 @@
     each: function (a, b, d) {
       c.forEach.call(d = this, a, b)
       return d
-    }
+    },
 
     // for some reason is needed to get an array-like
     // representation instead of an object

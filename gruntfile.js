@@ -8,17 +8,6 @@ module.exports = function(grunt) {
       ' * Released under <%= _.pluck(pkg.licenses, "type").join(", ") %> license\n */\n'
     },
     uglify: {
-      update: {
-        options: {
-          banner: '<%= meta.banner %>',
-          beautify: true,
-          preserveComments: 'all'
-        },
-        files: {
-          'ki.js': ['ki.js'],
-          'ki.ie8.js': ['ki.ie8.js']
-        }
-      },
       ie: {
         files: {
           'ki.ie8.min.js': ['ki.ie8.js']
