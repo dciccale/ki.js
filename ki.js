@@ -1,4 +1,4 @@
-/*
+/*!
  * ki.js - jQuery-like API super-tiny JavaScript library
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license
