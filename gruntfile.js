@@ -28,11 +28,6 @@ module.exports = function(grunt) {
         files: {
           'ki.min.js': ['ki.js']
         }
-      },
-      all: {
-        files: {
-          'ki.all.min.js': ['ki.js', 'ki.ie8.js']
-        }
       }
     }
   });
