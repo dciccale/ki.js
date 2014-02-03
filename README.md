@@ -123,7 +123,6 @@ Here are some of the tasks that grunt can run:
 * uglify:update -- add new banners
 * uglify:ie -- compile ki.ie8.min.js to ki.ie8.min.js
 * uglify:normal -- compile ki.min.js to ki.min.js
-* uglify:all -- combine ki.ie8.js and ki.js to ki.all.min.js
 
 Running `grunt` (default task) is just mapped to the `uglify:normal` task.
 
