@@ -1,10 +1,9 @@
-/*
+/*!
  * ki.js - jQuery-like API super-tiny JavaScript library
- * This version gives support for IE8+ and modern browsers
- * Copyright (c) 2012 Denis Ciccale (@tdecs)
+ * Copyright (c) 2013 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, f, h, i) {
+! function(a, b, c, d, e, f) {
 
   /*
    * (internal use)
@@ -15,12 +14,10 @@
    * d = empty array
    * returns array of dom nodes
    */
-  h = function (a, b, c, d) {
-    c = -1
-    d = []
-    while (b = a[++c]) d[c] = b
-    return d
-  }
+  e = function(a, b, c, d) {
+    for (c = -1, d = []; b = a[++c];) d[c] = b;
+    return d;
+  },
 
   /*
    * (internal use)
@@ -31,28 +28,32 @@
    * callback = function to execute when event is triggered
    * method = placeholder for the native method to call (internal use)
    */
-  i = function (action, type, element, callback, method) {
-    method = {on: 'addEventListener', off: 'removeEventListener'}[action]
+  f = function(a, b, c, d, e) {
+    e = {
+      on: "addEventListener",
+      off: "removeEventListener"
+    }[a];
     try {
-      element[method](type, callback, false)
-    } catch (e) {
-      method = {on: 'attachEvent', off: 'detachEvent'}[action]
-      element[method](action + type, function () { callback.apply(element, arguments) })
+      c[e](b, d, !1);
+    } catch (f) {
+      e = {
+        on: "attachEvent",
+        off: "detachEvent"
+      }[a], c[e](a + b, function() {
+        d.apply(c, arguments);
+      });
     }
-  }
-
+  },
 
   /*
    * $ main method
    * a = css selector, dom object, or function
    * returns instance
    */
-  this.$ = function (a) {
-    return new $[d].i(a)
-  }
-
-  // ki prototype
-  f = {
+  this.$ = function(a) {
+    return new $[c].i(a);
+  }, // ki prototype
+  d = {
     // default length
     length: 0,
 
@@ -60,8 +61,8 @@
      * init method (internal use)
      * a = selector, dom element or function
      */
-    i: function (a) {
-      c.push.apply(this, a && a.nodeType ? [a] : "" + a === a ? h(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null)
+    i: function(c) {
+      b.push.apply(this, c && c.nodeType ? [c] : "" + c === c ? e(a.querySelectorAll(c)) : /^f/.test(typeof c) ? $(a).r(c) : null);
     },
 
     /*
@@ -71,9 +72,8 @@
      * a = function to call when dom is ready
      * return this
      */
-    r: function (a) {
-      /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a)
-      return this
+    r: function(b) {
+      return /c/.test(a.readyState) ? b() : $(a).on("DOMContentLoaded", b), this;
     },
 
     /*
@@ -82,10 +82,10 @@
      * b = function
      * return this
      */
-    on: function (a, b) {
-      return this.each(function (c) {
-        i('on', a, this, b)
-      })
+    on: function(a, b) {
+      return this.each(function() {
+        f("on", a, this, b);
+      });
     },
 
     /*
@@ -94,32 +94,29 @@
      * b = function
      * return this
      */
-    off: function (a, b) {
-      return this.each(function (c) {
-        i('off', a, this, b)
-      })
+    off: function(a, b) {
+      return this.each(function() {
+        f("off", a, this, b);
+      });
     },
 
     /*
      * each method
      * use native forEach to iterate collection
      * a = the function to call each loop
-     * b = the this value for that function
-     * (c,d,e = internal use)
+     * (b = internal use)
      * return this
      */
-    each: function (a, b, c, d, e) {
-      for (c=this,d=0,e=c.length;d<e;++d) {
-        a.call(b,c[d],d,c)
-      }
-      return c
+    each: function(a, b, c, d) {
+      for (b = this, c = 0, d = b.length; d > c; ++c) a.call(b[c], b[c], c, b);
+      return b;
     },
 
     // for some reason is needed to get an array-like
     // representation instead of an object
-    splice: c.splice
+    splice: b.splice
   }
 
   // set prototypes
-  $[d] = f.i[d] = f
-}(document, [], 'prototype');
+  $[c] = d.i[c] = d;
+}(document, [], "prototype");
