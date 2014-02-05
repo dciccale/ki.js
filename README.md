@@ -47,7 +47,7 @@ $(function () {
   var alertMyName = function () {
     alert('My name is ' + this.textContent); // will allert 'ki.js'
   };
-  
+
   $('button').on('click', alertMyName);
   // to turn it off just use .off()
   //$('button').off('click', alertMyName);
@@ -93,10 +93,10 @@ Now use the plugin just like the other methods:
 ```javascript
 $(function () {
   // <p>hello</p>
-  
+
   // get the text from the p tag
   console.log($('p').text()); // hello
-  
+
   // set another text
   $('p').text('bye'); // bye
 });
@@ -113,6 +113,17 @@ In every cool and modern browser.
 ## The Code
 The code of ki.js was written for byte-saving, so I don't recommend using this script for a real application or website.
 It was done for fun, and the funniest part is that it actually works :)
+
+## Building
+
+To build, you need [Grunt](http://gruntjs.com/). If you haven't used grunt before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started).
+
+Here are some of the tasks that grunt can run:
+
+* grunt normal -- compile ki.js to ki.min.js
+* grunt ie -- compile ki.ie8.js to ki.ie8.min.js
+
+Running `grunt` (default task) is just mapped to the `uglify:normal` task.
 
 ## License
 See [LICENSE.txt](https://raw.github.com/dciccale/ki.js/master/LICENSE.txt)
