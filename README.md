@@ -1,6 +1,6 @@
 # ki.js
 
-ki.js is a super-tiny jQuery-like JavaScript Library (534 bytes | 330 gzipped)
+ki.js is a super-tiny jQuery-like JavaScript Library (519 bytes | 321 gzipped)
 
 ### Browser support
 
