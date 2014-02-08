@@ -1,12 +1,12 @@
 # ki.js
 
-ki.js is a super-tiny jQuery-like JavaScript Library (519 bytes | 321 gzipped)
+ki.js is a super-tiny jQuery-like JavaScript Library (496 bytes | 320 gzipped)
 
 ### Browser support
 
 [ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) **(recommended)** version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
 
-[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by the previous browsers including IE8. (646 bytes | 384 gzipped)
+[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by the previous browsers including IE8. (623 bytes | 385 gzipped)
 
 ## What can I do with ki.js?
 
