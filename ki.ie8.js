@@ -3,7 +3,7 @@
  * Copyright (c) 2014 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-! function (b, c, d, e, f) {
+! function (b, c, d, e, f, g) {
 
   // addEventListener support?
   f = b['add' + e];
@@ -13,7 +13,18 @@
    * a = selector, dom element or function
    */
   function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? c.slice.call(b.querySelectorAll(a)) : /^f/.test(typeof a) ? $(b).r(a) : null);
+    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? c.slice.call(b.querySelectorAll(a)) : g);
+  }
+
+  /*
+   * ready function (internal use)
+   * Smallest DOMReady code, ever
+   * http://www.dustindiaz.com/smallest-domready-ever
+   * a = function to call when dom is ready
+   * return this
+   */
+  function r(a) {
+    /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a);
   }
 
   /*
@@ -22,24 +33,13 @@
    * returns instance
    */
   $ = function (a) {
-    return new i(a);
+    return /^f/.test(typeof a) ? r(a) : new i(a);
   };
 
   // set ki prototype
   $[d] = i[d] = {
     // default length
     length: 0,
-
-    /*
-     * ready method
-     * Smallest DOMReady code, ever
-     * http://www.dustindiaz.com/smallest-domready-ever
-     * a = function to call when dom is ready
-     * return this
-     */
-    r: function (a) {
-      return /c/.test(b.readyState) ? a() : this.on('DOMContentLoaded', a), this;
-    },
 
     /*
      * on method
@@ -80,6 +80,6 @@
 
     // for some reason is needed to get an array-like
     // representation instead of an object
-    splice: b.splice
+    splice: c.splice
   };
 }(document, [], 'prototype', 'EventListener');

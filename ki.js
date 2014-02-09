@@ -3,40 +3,40 @@
  * Copyright (c) 2014 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-! function (b, c, d) {
+! function (b, c, d, e) {
 
   /*
    * init function (internal use)
    * a = selector, dom element or function
    */
   function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : /^f/.test(typeof a) ? $(b).r(a) : null);
+    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : e);
   }
 
   /*
-   * $ main method
+   * ready function (internal use)
+   * Smallest DOMReady code, ever
+   * http://www.dustindiaz.com/smallest-domready-ever
+   * a = function to call when dom is ready
+   * return this
+   */
+  function r(a) {
+    /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a);
+  }
+
+  /*
+   * $ main function
    * a = css selector, dom object, or function
    * returns instance
    */
   $ = function (a) {
-    return new i(a);
+    return /^f/.test(typeof a) ? r(a) : new i(a);
   };
 
   // set ki prototype
   $[d] = i[d] = {
     // default length
     length: 0,
-
-    /*
-     * ready method
-     * Smallest DOMReady code, ever
-     * http://www.dustindiaz.com/smallest-domready-ever
-     * a = function to call when dom is ready
-     * return this
-     */
-    r: function (a) {
-      return /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a), this;
-    },
 
     /*
      * on method
