@@ -11,9 +11,10 @@
   /*
    * init function (internal use)
    * a = selector, dom element or function
+   * d = placeholder for index
    */
-  function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? c.slice.call(b.querySelectorAll(a)) : g);
+  function i(a, d) {
+    for (d in a = a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : g) a[d].nodeType - 1 || (this[this.length++] = a[d]);
   }
 
   /*
