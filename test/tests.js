@@ -52,4 +52,9 @@
       ok(p === $ps[i]);
     });
   });
+
+  test('allow chaining', 1, function () {
+    var noop = function(){};
+    ok($ps.each(noop).on('click', noop).off('click', noop) === $ps);
+  });
 }());
