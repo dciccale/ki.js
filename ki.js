@@ -56,8 +56,13 @@
     /*
      * each method
      * use native forEach to iterate collection
+     * a = the function to call on each iteration
+     * b = the this value for that function
      */
-    each: c.forEach,
+    each: function (a, b) {
+      c.forEach.call(this, a, b)
+      return this
+    },
 
     // for some reason is needed to get an array-like
     // representation instead of an object

@@ -60,7 +60,7 @@
 
     /*
      * each method
-     * a = the function to call each loop
+     * a = the function to call on each iteration
      * b = the this value for that function (the current iterated native dom element by default)
      * return this
      */
