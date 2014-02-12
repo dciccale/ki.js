@@ -12,15 +12,6 @@ ki.js is a super-tiny jQuery-like JavaScript Library (438 bytes | 132 gzipped)
 
 ## Build
 
-To build, you need [Grunt](http://gruntjs.com/).
-
-Here are some of the tasks that grunt can run:
-
-* grunt normal -- compile ki.js to ki.min.js
-* grunt ie -- compile ki.ie8.js to ki.ie8.min.js
-
-Running `grunt` (default task) is just mapped to the `uglify:normal` task.
-
 In order to run the build task you'll need [NodeJS](http://nodejs.org/) and [Grunt.js](http://gruntjs.com/).
 
 After installing NodeJS, install grunt-cli:
