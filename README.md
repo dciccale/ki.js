@@ -1,12 +1,59 @@
 # ki.js
 
-ki.js is a super-tiny jQuery-like JavaScript Library (496 bytes | 320 gzipped)
+ki.js is a super-tiny jQuery-like JavaScript Library (438 bytes | 132 gzipped)
 
 ### Browser support
 
 [ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) **(recommended)** version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
 
-[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by the previous browsers including IE8. (623 bytes | 385 gzipped)
+[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by all the previous browsers including IE8. (619 bytes | 181 gzipped)
+
+*The minified and gzip size numbers mentioned above where measured without the header comments*
+
+## Build
+
+To build, you need [Grunt](http://gruntjs.com/).
+
+Here are some of the tasks that grunt can run:
+
+* grunt normal -- compile ki.js to ki.min.js
+* grunt ie -- compile ki.ie8.js to ki.ie8.min.js
+
+Running `grunt` (default task) is just mapped to the `uglify:normal` task.
+
+In order to run the build task you'll need [NodeJS](http://nodejs.org/) and [Grunt.js](http://gruntjs.com/).
+
+After installing NodeJS, install grunt-cli:
+
+Install grunt-cli:
+
+```bash
+$ npm install -g grunt-cli
+```
+
+Now that you have NodeJS and Grunt installed, clone the project by running:
+
+```bash
+$ git clone git://github.com/dciccale/ki.js.git
+```
+
+Install local dependencies inside ki.js directory:
+
+```bash
+$ cd ki.js && npm install
+```
+
+Now you can run the default task that will generate a `ki.min.js` file ready to use.
+
+```bash
+$ grunt
+```
+
+If you want IE8+ support, generate `ki.ie8.min.js` by running:
+
+```bash
+$ grunt ie
+```
 
 ## What can I do with ki.js?
 
@@ -113,17 +160,6 @@ In every cool and modern browser.
 ## The Code
 The code of ki.js was written for byte-saving, so I don't recommend using this script for a real application or website.
 It was done for fun, and the funniest part is that it actually works :)
-
-## Building
-
-To build, you need [Grunt](http://gruntjs.com/). If you haven't used grunt before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started).
-
-Here are some of the tasks that grunt can run:
-
-* grunt normal -- compile ki.js to ki.min.js
-* grunt ie -- compile ki.ie8.js to ki.ie8.min.js
-
-Running `grunt` (default task) is just mapped to the `uglify:normal` task.
 
 ## License
 See [LICENSE.txt](https://raw.github.com/dciccale/ki.js/master/LICENSE.txt)
