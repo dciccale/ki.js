@@ -20,7 +20,13 @@ module.exports = ->
         files:
           'ki.min.js': ['ki.js']
 
+    committers:
+      options:
+        email: true
+        output: 'CONTRIBUTORS.md'
+
   @loadNpmTasks 'grunt-contrib-uglify'
+  @loadNpmTasks 'grunt-git-committers'
 
   @registerTask 'ie', ['uglify:ie']
   @registerTask 'default', ['uglify:normal']
