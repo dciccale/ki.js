@@ -114,6 +114,10 @@ All methods of ki.js are chainable, just like jQuery.
 ## Plugins?
 Yeah, you could write plugins for ki.js if you want, fork the project for making them, keep them super super xxs and I promise to merge them into the official repo.
 
+### ki.extend
+
+Check out a lot of already made extensions for ki.js here: [ki.extend.js](https://github.com/james2doyle/ki.extend.js) (thanks to [james2doyle](https://github.com/james2doyle))
+
 ### How to make plugins?
 Just add your methods to the prototype of ki.js and you're done.
 For example, let's add a `text()` method for setting or getting the text of the elements, in the tiniest way I can think of:
