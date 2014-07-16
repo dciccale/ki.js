@@ -25,7 +25,7 @@
    * returns instance or executes function on ready
    */
   $ = function (a) {
-    return /^f/.test(typeof a) ? /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a) : new i(a)
+    return /^f/.test(typeof a) ? /in/.test(b.readyState) ? setTimeout('$('+a+')', 9) : a() : new i(a)
   }
 
   // set ki prototype
