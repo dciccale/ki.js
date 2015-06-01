@@ -24,7 +24,7 @@
   }
 
   // set ki prototype
-  $[d] = i[d] = {
+  $[d] = i[d] = $.fn = i.fn = {
 
     // default length
     length: 0,
