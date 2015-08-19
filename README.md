@@ -70,7 +70,7 @@ $('p:not(.note)');
 $('p:empty');
 ```
 
-[See a list of all CSS selectors](http://vogtjosh.com/selectors/)
+[See a list of all CSS selectors](https://drafts.csswg.org/selectors-3/#selectors)
 
 
 ### Events
