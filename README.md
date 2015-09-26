@@ -10,6 +10,20 @@ ki.js is a super-tiny jQuery-like API JavaScript library (480 bytes | 145 gzippe
 
 *The minified and gzip size numbers mentioned above where measured without the header comments*
 
+## Installation
+
+With bower
+
+```bash
+$ bower install ki
+```
+
+..or clone the repo
+
+```bash
+$ git clone https://github.com/dciccale/ki.js.git
+```
+
 ## Build
 
 In order to run the build task you'll need [NodeJS](http://nodejs.org/) and [Grunt.js](http://gruntjs.com/).
