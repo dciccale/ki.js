@@ -17,6 +17,9 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "test"
+    "test",
+    "Gruntfile.coffee",
+    "package.json",
+    "README.md"
   ]
 }
