@@ -1,6 +1,6 @@
 /*!
  * ki.js - jQuery-like API super-tiny JavaScript library
- * Copyright (c) 2014 Denis Ciccale (@tdecs)
+ * Copyright (c) 2015 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
 !function (b, c, d, e, f) {
