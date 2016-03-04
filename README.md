@@ -7,7 +7,7 @@ ki.js is a super-tiny jQuery-like API JavaScript library (480 bytes | 145 gzippe
 [ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) **(recommended)** version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
 
 [ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by all the previous browsers including IE8. (619 bytes | 181 gzipped)
-
+a
 *The minified and gzip size numbers mentioned above where measured without the header comments*
 
 ## Installation
@@ -105,17 +105,20 @@ $(function () {
   //$('button').off('click', alertMyName);
 });
 ```
-You can add any JavaScript event even touch events for mobile, under the hood ki.js uses addEventListener, so feel free to use any valid ECMAScript 5 event.
+You can add any JavaScript event even touch events for mobile, under the hood ki.js uses addEventListener, so feel free to use any valid [DOM event](https://developer.mozilla.org/en-US/docs/Web/Events).
 
 ### .each()
-The `each()` is also included in the core of ki.js for easy iterating a DOM collection.
+The `each()` method is also included in the core of ki.js for easy iteration on a DOM collection.
 
 ```javascript
 $(function () {
+
   // get all p tags
   $('p').each(function (elem, i) {
+  
     // change color to red
     elem.style.color = 'red';
+    
     // append the index to the text
     elem.textContent += i;
   });
@@ -123,10 +126,10 @@ $(function () {
 ```
 
 ### Keep the chain!
-All methods of ki.js are chainable, just like jQuery.
+All ki.js methods are chainable, just like jQuery.
 
 ## Plugins?
-Yeah, you could write plugins for ki.js if you want, fork the project for making them, keep them super super xxs and I promise to merge them into the official repo.
+Yeah, you can write plugins for ki.js if you want, fork the project, keep them super super xxs and I promise to merge them into the official repo.
 
 ### ki.extend
 
@@ -134,7 +137,7 @@ Check out a lot of already made extensions for ki.js here: [ki.extend.js](https:
 
 ### How to make plugins?
 Just add your methods to the prototype of ki.js and you're done.
-For example, let's add a `text()` method for setting or getting the text of the elements, in the tiniest way I can think of:
+For example, let's add a `text()` method for setting or getting the text of an element, in the tiniest way I can think of:
 
 ```javascript
 // minified is 106 bytes
@@ -162,7 +165,7 @@ $(function () {
 Remember to write byte-saving code, see this [useful resource for JavaScript byte-saving techniques](https://github.com/jed/140bytes/wiki/Byte-saving-techniques) written by 140byt.es community</strong>
 <hr>
 
-## Where can i use ki.js?
+## Where can I use ki.js?
 
 In every cool and modern browser.
 
