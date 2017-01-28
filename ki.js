@@ -3,7 +3,7 @@
  * Copyright (c) 2015 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, e) {
+!function(b, c, d, global, e) {
 
   /*
    * init function (internal use)
@@ -19,7 +19,7 @@
    * http://www.dustindiaz.com/smallest-domready-ever
    * returns instance or executes function on ready
    */
-  $ = function (a) {
+  var $ = global.$ = function(a) {
     return /^f/.test(typeof a) ? /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a) : new i(a)
   }
 
@@ -35,8 +35,8 @@
      * b = function
      * return this
      */
-    on: function (a, b) {
-      return this.each(function (c) {
+    on: function(a, b) {
+      return this.each(function(c) {
         c.addEventListener(a, b)
       })
     },
@@ -47,9 +47,27 @@
      * b = function
      * return this
      */
-    off: function (a, b) {
-      return this.each(function (c) {
+    off: function(a, b) {
+      return this.each(function(c) {
         c.removeEventListener(a, b)
+      })
+    },
+
+    hide: function() {
+      return this.each(function(b) {
+        b.style.display = 'none';
+      });
+    },
+
+    show: function() {
+      return this.each(function(b) {
+        b.style.display = '';
+      });
+    },
+
+    toggle: function() {
+      return this.each(function(e) {
+        e.style.display = e.style.display === 'none' ? '' : 'none'
       })
     },
 
@@ -59,7 +77,7 @@
      * a = the function to call on each iteration
      * b = the this value for that function
      */
-    each: function (a, b) {
+    each: function(a, b) {
       c.forEach.call(this, a, b)
       return this
     },
@@ -68,4 +86,4 @@
     // representation instead of an object
     splice: c.splice
   }
-}(document, [], 'prototype');
+}(document, [], 'prototype', (typeof module !== 'undefined' && module.exports) || window);
