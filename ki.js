@@ -10,7 +10,7 @@
    * a = selector, dom element or function
    */
   function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : e)
+    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : a)
   }
 
   /*
