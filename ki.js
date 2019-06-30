@@ -10,7 +10,14 @@
    * a = selector, dom element or function
    */
   function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : e)
+    c.push.apply(this, a && a.nodeType ?
+      [a] :
+      '' + a === a ?
+        a[0] === '<' && a[a.length - 1] === '>' ?
+        [b.createElement(a.replace(/^<(\w+)\s*?\/?>[^\n\r\S]*(?:$|<\/\1>)/, '$1'))] :
+        b.querySelectorAll(a) :
+      e
+    )
   }
 
   /*
