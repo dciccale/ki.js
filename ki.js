@@ -10,7 +10,7 @@
    * a = selector, dom element or function
    */
   function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : e)
+    c.push.apply(this, a && a.nodeType ? [a] : a && Array.isArray(a) ? a : '' + a === a ? ( a[0] === '<' && a[a.length - 1] === '>' ? [b.createElement(a.replace(/^<(\w+)\s*?\/?>[^\n\r\S]*(?:$|<\/\1>)/, '$1'))] : b.querySelectorAll(a) ) : [b.createDocumentFragment()]);
   }
 
   /*
@@ -24,10 +24,7 @@
   }
 
   // set ki prototype
-  $[d] = i[d] = $.fn = i.fn = {
-
-    // default length
-    length: 0,
+  $[d] = i[d] = $.fn = i.fn = Object.create(Array.prototype, {
 
     /*
      * on method
@@ -35,11 +32,11 @@
      * b = function
      * return this
      */
-    on: function (a, b) {
+    on: {value: function (a, b) {
       return this.each(function (c) {
         c.addEventListener(a, b)
       })
-    },
+    }},
 
     /*
      * off method
@@ -47,11 +44,11 @@
      * b = function
      * return this
      */
-    off: function (a, b) {
+    off: {value: function (a, b) {
       return this.each(function (c) {
         c.removeEventListener(a, b)
       })
-    },
+    }},
 
     /*
      * each method
@@ -59,13 +56,9 @@
      * a = the function to call on each iteration
      * b = the this value for that function
      */
-    each: function (a, b) {
+    each: {value: function (a, b) {
       c.forEach.call(this, a, b)
       return this
-    },
-
-    // for some reason is needed to get an array-like
-    // representation instead of an object
-    splice: c.splice
+    }},
   }
 }(document, [], 'prototype');
