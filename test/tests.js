@@ -23,7 +23,6 @@
   });
 
   test('wrap a DOM element with $', 1, function () {
-
     ok($(btn) instanceof $);
   });
 
@@ -57,4 +56,15 @@
     var noop = function(){};
     ok($ps.each(noop).on('click', noop).off('click', noop) === $ps);
   });
+
+  test('allow array methods', 2, function() {
+    var arr = $ps.map(e => e.textContent);
+    ok(arr.length === 2);
+    ok(arr[0] === "Test")
+  })
+
+  test('allow array access', 1, function() {
+    var e = $ps[0];
+    ok(e === document.getElementById("p1"));
+  })
 }());

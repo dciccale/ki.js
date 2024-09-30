@@ -23,12 +23,11 @@
     return /^f/.test(typeof a) ? /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a) : new i(a)
   }
 
+  // set prototype to array to inherit array behavior
+  $[d] = i[d] = $.fn = i.fn = c
+
   // set ki prototype
-  $[d] = i[d] = $.fn = i.fn = {
-
-    // default length
-    length: 0,
-
+  Object.assign($.fn, {
     /*
      * on method
      * a = string event type i.e 'click'
@@ -63,9 +62,5 @@
       c.forEach.call(this, a, b)
       return this
     },
-
-    // for some reason is needed to get an array-like
-    // representation instead of an object
-    splice: c.splice
-  }
+  })
 }(document, [], 'prototype');
