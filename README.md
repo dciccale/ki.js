@@ -4,11 +4,9 @@ ki.js is a super-tiny jQuery-like API JavaScript library (460 bytes | 299 gzippe
 
 ### Browser support
 
-[ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) **(recommended)** version is supported by the following browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
+[ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) version is supported by all modern browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
 
-[ki.ie8.js](https://github.com/dciccale/ki.js/blob/master/ki.ie8.js) version is supported by all the previous browsers including IE8. (619 bytes | 181 gzipped)
-a
-_The minified and gzip size numbers mentioned above where measured without the header comments_
+*The minified and gzip size numbers mentioned above where measured without the header comments*
 
 ## Installation
 
@@ -52,12 +50,6 @@ Now you can run the default task that will generate a `ki.min.js` file ready to 
 
 ```bash
 $ grunt
-```
-
-If you want IE8+ support, generate `ki.ie8.min.js` by running:
-
-```bash
-$ grunt ie
 ```
 
 ## What can I do with ki.js?
@@ -159,7 +151,7 @@ For example, let's add a `text()` method for setting or getting the text of an e
 
 ```javascript
 // minified is 106 bytes
-$.prototype.text = function (a) {
+$.fn.text = function (a) {
   return a === a + ""
     ? this.each(function (b) {
         b.textContent = a;
