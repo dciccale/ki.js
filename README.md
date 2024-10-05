@@ -1,6 +1,6 @@
 # ki.js
 
-ki.js is a super-tiny jQuery-like API JavaScript library (480 bytes | 145 gzipped)
+ki.js is a super-tiny jQuery-like API JavaScript library (460 bytes | 299 gzipped)
 
 ### Browser support
 
@@ -87,6 +87,18 @@ $("p:empty");
 ```
 
 [See a list of all CSS selectors](https://drafts.csswg.org/selectors-3/#selectors)
+
+### Array manipulation
+
+You can use ki.js objects like you would use normal arrays, including bracket notation, array methods and iterators
+
+```javascript
+$('p')[0]; // -> get the first element
+$('p').map(e => e.textContent); // -> get text in all elements
+for (const element of $('p')) { // iterators
+  element.textContent = "Hello";
+}
+```
 
 ### Events
 

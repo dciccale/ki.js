@@ -57,14 +57,21 @@
     ok($ps.each(noop).on('click', noop).off('click', noop) === $ps);
   });
 
-  test('allow array methods', 2, function() {
+  test('array methods', 2, function() {
     var arr = $ps.map(e => e.textContent);
     ok(arr.length === 2);
     ok(arr[0] === "Test")
   })
 
-  test('allow array access', 1, function() {
+  test('array access', 1, function() {
     var e = $ps[0];
     ok(e === document.getElementById("p1"));
+  })
+
+  test('array iterators', 2, function() {
+    var e = $ps;
+    for (const element of e) {
+      ok(element.tagName === "P");
+    }
   })
 }());

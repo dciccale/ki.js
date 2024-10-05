@@ -34,7 +34,7 @@
      * b = function
      * return this
      */
-    on: function (a, b) {
+    on(a, b) {
       return this.each(function (c) {
         c.addEventListener(a, b)
       })
@@ -46,7 +46,7 @@
      * b = function
      * return this
      */
-    off: function (a, b) {
+    off(a, b) {
       return this.each(function (c) {
         c.removeEventListener(a, b)
       })
@@ -58,7 +58,7 @@
      * a = the function to call on each iteration
      * b = the this value for that function
      */
-    each: function (a, b) {
+    each(a, b) {
       c.forEach.call(this, a, b)
       return this
     },
