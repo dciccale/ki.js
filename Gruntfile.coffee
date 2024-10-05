@@ -11,10 +11,6 @@ module.exports = ->
           ' * Released under <%= _.pluck(pkg.licenses, "type").join(", ") %> license\n' +
           ' */\n'
 
-      ie:
-        files:
-          'ki.ie8.min.js': ['ki.ie8.js']
-
       normal:
         files:
           'ki.min.js': ['ki.js']
@@ -27,5 +23,4 @@ module.exports = ->
   @loadNpmTasks 'grunt-contrib-uglify'
   @loadNpmTasks 'grunt-git-committers'
 
-  @registerTask 'ie', ['uglify:ie']
   @registerTask 'default', ['uglify:normal']
