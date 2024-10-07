@@ -1,7 +1,8 @@
 {
   "name": "ki.js",
   "description": "jQuery-like API super-tiny JavaScript library",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "license": "MIT",
   "author": {
     "name": "Denis Ciccale",
     "email": "dciccale@gmail.com",
@@ -14,14 +15,10 @@
   "bugs": {
     "url": "http://github.com/dciccale/ki.js/issues"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "http://opensource.org/licenses/MIT"
-  }],
-  "dependencies" : {},
+  "scripts": {
+    "build": "node compress.mjs"
+  },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-git-committers": "~0.1.2"
+    "terser": "5.34.1"
   }
 }
