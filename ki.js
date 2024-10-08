@@ -3,16 +3,7 @@
  * Copyright (c) 2015 Denis Ciccale (@tdecs)
  * Released under MIT license
  */
-!function (b, c, d, e) {
-
-  /*
-   * init function (internal use)
-   * a = selector, dom element or function
-   */
-  function i(a) {
-    c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : e)
-  }
-
+!function (b, c, d) {
   /*
    * $ main function
    * a = css selector, dom object, or function
@@ -20,11 +11,13 @@
    * returns instance or executes function on ready
    */
   $ = function (a) {
-    return /^f/.test(typeof a) ? /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a) : new i(a)
-  }
+    return this instanceof $
+      ? c.push.apply(this, a && a.nodeType ? [a] : '' + a === a ? b.querySelectorAll(a) : d) // constructor
+      : /^f/.test(typeof a) ? /c/.test(b.readyState) ? a() : $(b).on('DOMContentLoaded', a) : new $(a) // function
+  };
 
   // set prototype to array to inherit array behavior
-  $[d] = i[d] = $.fn = i.fn = c
+  $.prototype = $.fn = c
 
   // set ki prototype
   Object.assign($.fn, {
@@ -59,8 +52,8 @@
      * b = the this value for that function
      */
     each(a, b) {
-      c.forEach.call(this, a, b)
+      this.forEach(a, b)
       return this
     },
   })
-}(document, [], 'prototype');
+}(document, []);
