@@ -2,54 +2,12 @@
 
 ki.js is a super-tiny jQuery-like API JavaScript library (445 bytes | 282 gzipped)
 
-### Browser support
-
-[ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) version is supported by all modern browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
-
-*The minified and gzip size numbers mentioned above where measured without the header comments*
-
 ## Installation
 
-With bower
+Install by either downloading the latest [ki.min.js](https://github.com/dciccale/ki.js/blob/master/releases/ki-latest.min.js) version, or by using a CDN:
 
-```bash
-$ bower install ki
-```
-
-..or clone the repo
-
-```bash
-$ git clone https://github.com/dciccale/ki.js.git
-```
-
-## Build
-
-In order to run the build task you'll need [NodeJS](http://nodejs.org/) and [Grunt.js](http://gruntjs.com/).
-
-After installing NodeJS, install grunt-cli:
-
-Install grunt-cli:
-
-```bash
-$ npm install -g grunt-cli
-```
-
-Now that you have NodeJS and Grunt installed, clone the project by running:
-
-```bash
-$ git clone git://github.com/dciccale/ki.js.git
-```
-
-Install local dependencies inside ki.js directory:
-
-```bash
-$ cd ki.js && npm install
-```
-
-Now you can run the default task that will generate a `ki.min.js` file ready to use.
-
-```bash
-$ grunt
+```html
+<script src="https://cdn.jsdelivr.net/gh/dciccale/ki.js/releases/ki-latest.min.js"></script>
 ```
 
 ## What can I do with ki.js?
@@ -85,9 +43,10 @@ $("p:empty");
 You can use ki.js objects like you would use normal arrays, including bracket notation, array methods and iterators
 
 ```javascript
-$('p')[0]; // -> get the first element
-$('p').map(e => e.textContent); // -> get text in all elements
-for (const element of $('p')) { // iterators
+$("p")[0]; // -> get the first element
+$("p").map((e) => e.textContent); // -> get text in all elements
+for (const element of $("p")) {
+  // iterators
   element.textContent = "Hello";
 }
 ```
@@ -182,6 +141,26 @@ Remember to write byte-saving code, see this [useful resource for JavaScript byt
 ## Where can I use ki.js?
 
 In every cool and modern browser.
+
+[ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) version is supported by all modern browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
+
+_The minified and gzip size numbers mentioned above where measured without the header comments_
+
+## Build locally
+
+In order to run the build task you'll need [NodeJS](http://nodejs.org/) latest version.
+
+After installing NodeJS and cloning the project,
+
+```bash
+npm install
+```
+
+Now you can run the default task that will generate a `ki.min.js` file ready to use.
+
+```bash
+npm run build
+```
 
 ## The Code
 
