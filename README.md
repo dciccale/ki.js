@@ -2,15 +2,13 @@
 
 ki.js is a super-tiny jQuery-like API JavaScript library (445 bytes | 282 gzipped)
 
-### Browser support
-
-[ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) version is supported by all modern browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
-
-_The minified and gzip size numbers mentioned above where measured without the header comments_
-
 ## Installation
 
-Install by either downloading the latest ki.min.js version, or by using a CDN:
+Install by either downloading the latest [ki.min.js](https://github.com/dciccale/ki.js/blob/master/releases/ki-latest.min.js) version, or by using a CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/dciccale/ki.js/releases/ki-latest.min.js"></script>
+```
 
 ## What can I do with ki.js?
 
@@ -143,6 +141,10 @@ Remember to write byte-saving code, see this [useful resource for JavaScript byt
 ## Where can I use ki.js?
 
 In every cool and modern browser.
+
+[ki.js](https://github.com/dciccale/ki.js/blob/master/ki.js) version is supported by all modern browsers: IE9+, Chrome 6+, Safari 5+, Firefox 6+, Opera 11.5+.
+
+_The minified and gzip size numbers mentioned above where measured without the header comments_
 
 ## Build locally
 
