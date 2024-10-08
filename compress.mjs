@@ -5,6 +5,9 @@ const input = await readFile("ki.js", "utf8");
 const packageData = JSON.parse(await readFile("package.json", "utf8"));
 
 const result = await minify(input, {
+  compress: {
+    unused: false, // Keep undefined aliases to reduce size
+  },
   output: {
     comments: false,
     preamble: `/*!
